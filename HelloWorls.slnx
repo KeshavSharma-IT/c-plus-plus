@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HelloWorls/HelloWorls.vcxproj" Id="e4d93a7c-fd44-42d7-a0eb-eacf1f45f2e0" />
+</Solution>
