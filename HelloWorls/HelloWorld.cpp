@@ -1,4 +1,5 @@
 ﻿#include <iostream> //Preprocessor Directive
+#include <string>
 //The iostream is the header file that defines functions and operations related to the input / output stream
 using namespace std;  //Namespace
 
@@ -6,7 +7,6 @@ int  main() //The main() function is the default starting point of any C++ progr
 {
 	//cout  --Printing Statement 
 	cout << "this is first line"<<endl;
-	cout << "this is first line" << endl;
 
 	// variable- it is like a container which store value,
 	// like a=10 , so a is container stroing 10 as a value
@@ -32,7 +32,12 @@ int  main() //The main() function is the default starting point of any C++ progr
 		long double				12bytes
 		wchar_t					2 or 4 bytes	1 wide character*/
 
-
+	int p2 = 10.5;
+	/*int p1{ 10.5 };
+	int p3(10.5);*/
+	cout << "Integer:p " << p2 << endl;
+	/*cout << "Integer:p1 " << p1 << endl;
+	cout << "Integer:p3 " << p3 << endl;*/
 
 
 	char ch = 'A';
@@ -40,30 +45,39 @@ int  main() //The main() function is the default starting point of any C++ progr
 	float f = 10.5;
 	double d = 99.99;
 	bool flag = true;
+	const double MY_PI = 3.14159;
+
+	//
 
 	cout << "Character: " << ch << endl;
 	cout << "Integer: " << i << endl;
 	cout << "Float: " << f << endl;
 	cout << "Double: " << d << endl;
 	cout << "Boolean: " << flag << endl;
+	cout << boolalpha; // note
+	cout << "Boolean: " << flag << endl;
+	cout << "MY_PI: " << MY_PI << endl;
 
-	//to find size of a varaible we can use sizeof() function
+	////to find size of a varaible we can use sizeof() function
 	int x = 10;
 	char ch1 = 'A';
 
 	cout << sizeof(x) << endl;
 	cout << sizeof(ch1) << endl;
 
-	//Oprators
-	//1. Arithmetic Operators
-		/*
-			 +: Addition            
-			 -: Subtraction        
-			 *: Multiplication      
-			 /: Division            
-			 % : Modulus(remainder) 
-		 */
+	////Oprators
+	////1. Arithmetic Operators
+	//	/*
+	//		 +: Addition            
+	//		 -: Subtraction        
+	//		 *: Multiplication      
+	//		 /: Division            
+	//		 % : Modulus(remainder) 
+	//	 */
 	int a = 12, b = 8;
+
+
+	//cout << "Sum a and b, a  is  " << a << "and b is =" << b << "a+b=" << a + b << endl;
 
 	cout << "Sum = " << a + b << endl;
 	cout << "Difference = " << a - b << endl;
@@ -85,51 +99,43 @@ int  main() //The main() function is the default starting point of any C++ progr
 	cout << (y < z) << endl;
 
 	//3.Logical Operators
-	/*
-		Operator | Meaning      
-		 &&	     : Logical AND 
-		 ||      : Logical OR 
-		 !		 : Logical NOT 
-	*/
+	///*
+	//	Operator | Meaning      
+	//	 &&	     : Logical AND 
+	//	 ||      : Logical OR 
+	//	 !		 : Logical NOT 
+	//*/
 
 		int p = 10, q = 20;
 
 		cout << (p < q && q > 15) << endl;
 
 
-	
+	//
 	//4.Assignment Operators
-	/*
-	Oprator :	Example		
-		  = : a = 10  
-		 += : a += 5 
-		 -= : a -= 5 
-		 *= : a *= 2 
-		 /= : a /= 2 
-	*/
-	//Increment / Decrement Operators
-	/*
-	| Operator | Meaning   |
-		| -------- | -------- - |
-		| ++ | Increment |
-		| -- | Decrement |
-	*/
+	///*
+	//Oprator :	Example		
+	//	  = : a = 10  
+	//	 += : a += 5 
+	//	 -= : a -= 5 
+	//	 *= : a *= 2 
+	//	 /= : a /= 2 
+	//*/
+	
+	////Increment / Decrement Operators
+	///*
+	//| Operator | Meaning   |
+	//	| -------- | -------- - |
+	//	| ++ | Increment |
+	//	| -- | Decrement |
+	//*/
 
 	int m = 10;
 	m++;
 	cout << m << endl;
 
 
-	//conditions
-	int age = 20;
-
-	if (age >= 18)
-	{
-		cout << "Eligible to vote";
-	}
-	else {
-		cout << "can't vote";
-	}
+	
 
 
 
@@ -152,6 +158,113 @@ int  main() //The main() function is the default starting point of any C++ progr
 */
 
 
+	//string
+	string str = "Hello, World!";
+	cout << str << endl;
+	cout << str[0] << endl; //indexing 
+	cout << str.at(3) << endl; //using at() method
+	cout << str.size() << endl; //size of string
+	cout << str.length() << endl; //length of string
+
+	//Concatenation string
+	string name = "keshav";
+	string greeting = "Hello " + name;
+	cout << greeting << endl;
+
+	//addding char in string
+	name.push_back('!');
+	cout << name << endl;
+
+	//Removing last char from string
+	name.pop_back();
+	cout << name << endl;
 
 
+	//inserting sub string
+	name.insert(6, " sharma");
+	cout << name << endl;
+
+	//erasing sub string
+	name.erase(6, 4);
+	cout << name << endl;
+
+	// substring
+	string sub = name.substr(0, 6);
+	cout << sub << endl;
+
+	//string find
+	//name.find("keshav");
+	cout << name.find("keshav") << endl;
+
+	//Input
+
+	//int age;
+	//string name_;
+	//cout << "Enter your age" << endl;
+	//cin >> age;
+
+	//cout << "Enter your name" << endl;
+	////cin >> name_;
+
+	//cin.ignore();
+	//getline(cin, name_);
+
+	//cout << "your name is " << name_ << ",and your age is " << age << endl;
+
+	// conditions-> if ,else.else if.
+
+	int yourage = 16;
+	if (yourage > 18)
+		cout << "please go and vote" << endl;;
+
+	if (yourage > 18) {
+		cout << "please go and vote" << endl;;
+	}
+	else {
+		cout << "wait till you are 18" << endl;;
+	}
+
+	int marks = 49;
+	if (marks >= 90) {
+		cout << "Grade A" << endl;
+	}
+	else if (marks >= 75) {
+		cout << "Grade B" << endl;
+	}
+	else if (marks >= 50) {
+		cout << "Grade C" << endl;
+	}
+	else {
+		cout << "Fail" << endl;
+	}
+
+
+	//switch 
+	int day = 3;
+		switch (day) {
+		case 1:cout << "monday"; break;
+		case 2: cout << "Tuesday"; break;
+		case 3: cout << "Wednesday"; break;
+		default: cout << "Invalid day";
+
+		}
+
+	//loops
+		/*for (int i = 0;i <=5;i++) {
+			cout << i << endl;
+		}*/
+
+		//do while
+		/*int l = 0;
+		do {
+			cout << l << endl;
+			l++;
+		} while (l < 5);*/
+
+		//while
+		int l = 0;
+		while (l <= 5) {
+			cout << l << endl;
+			l++;
+		}
 }
