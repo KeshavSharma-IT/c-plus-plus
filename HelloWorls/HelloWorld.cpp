@@ -19,6 +19,20 @@ void changeValue_(int& x) {  // reference parameter
 }
 
 
+int plusFuncInt(int x, int y) {
+	return x + y;
+}
+
+double plusFuncDouble(double x, double y) {
+	return x + y;
+}
+
+struct student {
+	int rollNo;
+	int age;
+	string name;
+};
+
 int  main() //The main() function is the default starting point of any C++ program.
 {
 	//cout  --Printing Statement 
@@ -290,49 +304,97 @@ int  main() //The main() function is the default starting point of any C++ progr
 	//- It allows storing multiple values under a single name, accessed using an index.
 
 	//int arr[5];              // declaration
-	int arr[5] = { 10, 20, 30, 40, 50 };  // initialization
+	//int arr[5] = { 10, 20, 30, 40, 50 };  // initialization
 	//int arr[] = { 1, 2, 3 };   // compiler decides size (3 here)
 
 
-	cout << arr[0]<<endl;  // prints first element
-	arr[2] = 100;    // updates third element
-	cout << arr[2]<<endl;  // prints first element
-	
-	//taking array as input
-	int n;
-	cout << "Enter size of array"<<endl;
-	cin >> n;
-	int arr1[100];
-	cout << "enter array element"<<endl;
-	for (int i = 0; i < n; i++) {
-		cin >> arr1[i];   // input
-	}
+	//cout << arr[0]<<endl;  // prints first element
+	//arr[2] = 100;    // updates third element
+	//cout << arr[2]<<endl;  // prints first element
+	//
+	////taking array as input
+	//int n;
+	//cout << "Enter size of array"<<endl;
+	//cin >> n;
+	//int arr1[100];
+	//cout << "enter array element"<<endl;
+	//for (int i = 0; i < n; i++) {
+	//	cin >> arr1[i];   // input
+	//}
 
-	for (int i = 0; i < n; i++) {
-		cout << arr1[i] << " ";  // output
-	}
-	
-	//matrix or 2d array
-	int mat[3][3] = {
-		{1,2,3},
-		{4,5,6},
-		{7,8,9}
-	};
+	//for (int i = 0; i < n; i++) {
+	//	cout << arr1[i] << " ";  // output
+	//}
+	//
+	////matrix or 2d array
+	//int mat[3][3] = {
+	//	{1,2,3},
+	//	{4,5,6},
+	//	{7,8,9}
+	//};
 
-	cout << mat[0][1];
+	//cout << mat[0][1];
 
 	//Function : - A function is a block of code that performs a specific task.
 	//-Helps in modularity, reusability, and readability of code.
 
 
-	cout << add(3, 4);  // Function Call
-	int a = 10;
-	changeValue(a); //call by value
-	cout << a << endl;
-	changeValue_(a);
-	cout << a << " orignal a" << endl;
+	//cout << add(3, 4);  // Function Call
+	//int a = 10;
+	//changeValue(a); //call by value
+	//cout << a << endl;
+	//changeValue_(a);
+	//cout << a << " orignal a" << endl;
+
+	//Function overloading allows multiple functions to have the same name, as long as their parameters are different in type or number:
+	
+	//int myNum1 = plusFuncInt(8, 5);
+	//double myNum2 = plusFuncDouble(4.3, 6.26);
+
+	//cout << "Int: " << myNum1 << "\n";
+	//cout << "Double: " << myNum2;
+
+	//Pointers
+	
+	string name = "Keshav";
+	string* ptr = &name;
+
+
+	cout << name << endl;
+	cout << &name << endl;
+	cout << ptr << endl;
+	cout << *ptr << endl;
+	*ptr = "rohan";
+	cout << *ptr << endl;
+	cout << name << endl;
+	cout << &name << endl;
+	cout << ptr << endl;
+
+	
+
+	//struct
+	/*Structures(also called structs) are a way to group several related variables into one place.
+
+	Each variable in the structure is known as a member of the structure.
+
+	Unlike an array, a structure can contain many different data types : int, string, bool, etc.*/
+	student newStudent;
+	newStudent.age = 12;
+	newStudent.rollNo = 1;
+	student newStudent1;
+	newStudent1.age = 15;
+	newStudent1.rollNo = 2;
+	newStudent1.name = "sanisha";
+
+	cout << newStudent.age;
+	cout << newStudent1.age;
+
+
 }
 
-int add(int a, int b) {
-	return a + b;
-}
+//int add(int a, int b) {
+//	return a + b;
+//}
+
+
+
