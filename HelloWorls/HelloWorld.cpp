@@ -1,5 +1,6 @@
 ﻿#include <iostream> //Preprocessor Directive
 #include <string>
+#include <fstream>
 //The iostream is the header file that defines functions and operations related to the input / output stream
 using namespace std;  //Namespace
 
@@ -32,6 +33,82 @@ struct student {
 	int age;
 	string name;
 };
+
+class Person {
+private: 
+	int age;
+	string name;
+
+public:
+	Person() {
+		age = 12;
+		name = "test";
+	}
+
+	void setPerson(int a,string n) {
+		age = a;
+		name = n;
+	}
+
+	void displayPerson() {
+		cout << "name =" << name << " and age= " << age << endl;
+	}
+};
+
+class Student :public Person {
+private:
+	int rollNo;
+public:
+	void setStudent(int r) {
+		rollNo = r;
+	}
+
+	void displayStudent(){
+		displayPerson();
+		cout << "Roll No =" << rollNo<<endl;
+		}
+};
+
+class Teacher :public Person {
+private:
+	string subject;
+
+public:
+	void setTeacher(string s) {
+		subject = s;
+	}
+
+	void displayTeacher() {
+		displayPerson();
+		cout << "subject for teacher =" << subject << endl;
+	}
+};
+
+
+class Worker {
+public:
+	virtual void work() = 0;  // Pure virtual function (Abstraction)
+
+
+};
+
+
+class StudentWorker :public Worker {
+public:
+	void work() override {
+		cout << "student is studing";
+	}
+};
+
+class TeacherWorker : public Worker {
+public:
+	void work() override {
+		cout << "Teacher is teaching..." << endl;
+	}
+};
+
+
+
 
 int  main() //The main() function is the default starting point of any C++ program.
 {
@@ -163,10 +240,6 @@ int  main() //The main() function is the default starting point of any C++ progr
 	/*int m = 10;
 	m++;
 	cout << m << endl;*/
-
-
-	
-
 
 
 	//HomeWork
@@ -356,7 +429,7 @@ int  main() //The main() function is the default starting point of any C++ progr
 
 	//Pointers
 	
-	string name = "Keshav";
+	/*string name = "Keshav";
 	string* ptr = &name;
 
 
@@ -368,7 +441,7 @@ int  main() //The main() function is the default starting point of any C++ progr
 	cout << *ptr << endl;
 	cout << name << endl;
 	cout << &name << endl;
-	cout << ptr << endl;
+	cout << ptr << endl;*/
 
 	
 
@@ -378,7 +451,7 @@ int  main() //The main() function is the default starting point of any C++ progr
 	Each variable in the structure is known as a member of the structure.
 
 	Unlike an array, a structure can contain many different data types : int, string, bool, etc.*/
-	student newStudent;
+	/*student newStudent;
 	newStudent.age = 12;
 	newStudent.rollNo = 1;
 	student newStudent1;
@@ -387,14 +460,89 @@ int  main() //The main() function is the default starting point of any C++ progr
 	newStudent1.name = "sanisha";
 
 	cout << newStudent.age;
-	cout << newStudent1.age;
+	cout << newStudent1.age;*/
 
+
+	//file handling
+	/*ofstream myfile("sanisha.txt");
+	myfile << "this is first line" << endl;
+	myfile << "this is 2nd line";
+	myfile.close();
+
+
+	string myText;
+	ifstream myreadfile("sanisha.txt");
+
+	while (getline(myreadfile, myText)) {
+		cout << myText << endl;
+	}
+	myreadfile.close();
+
+	ofstream minefile("nishu.txt");
+	minefile << "this is my code" << endl;
+	minefile << "this is my 2nd code";
+	minefile.close();
+
+	string minefiletxt;
+	ifstream minereadfile("nishu.txt");
+	while (getline(minereadfile, minefiletxt)) {
+		cout << minefiletxt << endl;
+	}
+	minereadfile.close();*/
+
+	//OOPs
+	// Introduction to OOP
+// - Definition: Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which contain data (attributes) and functions (methods).
+// - Why OOP?
+// - Models real-world entities.
+// - Promotes reusability (via inheritance).
+// - Improves maintainability and scalability.
+// - Encourages modularity.
+
+
+// - A constructor is a special function in a class that runs automatically when an object is created.
+// - It has the same name as the class.
+// - It does not have a return type (not even void).
+// - You can define:
+// - Default constructor → no parameters.
+// - Parameterized constructor → takes arguments to initialize data
+
+// - virtual is used in a base class to indicate that a function can be overridden in a derived class.
+
+
+// 1.Encapsulation
+// - Wrapping data and methods into a single unit (class).
+// - Access specifiers: public, private, protected
+
+	
+	Person p1;
+	p1.setPerson(18, "Keshav");
+	p1.displayPerson();
+
+
+	Student s1;
+	s1.setPerson(15, "Sanisha");
+	s1.setStudent(1);
+	s1.displayStudent();
+
+
+	Teacher t1;
+	t1.setPerson(30, "mohit");
+	t1.setTeacher("c++");
+	t1.displayTeacher();
+
+	StudentWorker sw;
+	TeacherWorker tw;
+	sw.work();
+	tw.work();
 
 }
 
 //int add(int a, int b) {
 //	return a + b;
 //}
+
+
 
 
 
