@@ -1,6 +1,13 @@
 ﻿#include <iostream> //Preprocessor Directive
 #include <string>
 #include <fstream>
+#include <vector>
+#include <list>
+#include <queue>
+#include <deque>
+#include <stack>
+#include <map>
+#include <set>
 //The iostream is the header file that defines functions and operations related to the input / output stream
 using namespace std;  //Namespace
 
@@ -536,6 +543,169 @@ int  main() //The main() function is the default starting point of any C++ progr
 	sw.work();
 	tw.work();
 
+
+
+	//- STL (Standard Template Library) is a collection of generic classes and functions in C++.
+// - STL is divided into 4 major components:
+// - Containers → store data (e.g., vector, list, map).
+// - Iterators → pointers-like objects to traverse containers.
+// - Algorithms → functions like sort(), find(), reverse().
+// - Functors → function objects (objects that behave like functions)
+
+
+//Vactor- The difference between an array and a vector, is that the size of an array cannot be modified (you cannot add or remove elements from an array). 
+//A vector however, can grow or shrink in size as needed.
+	// vector<string> students={"keshav","mohan"};
+	// cout<<students.size()<<endl;
+	// vector<int> vec(3,10);
+	//  for(int val:vec){
+	//     cout<<val<<" ";
+	// }
+	// vector<int> vec2(vec);
+
+	// vector<int> v;
+	// cout<<v.size()<<endl;
+	// cout<<v.capacity()<<endl;
+	// v.push_back(1);
+	// cout<<v.size()<<endl;
+	// cout<<v.capacity()<<endl;
+	// v.push_back(2);
+	// v.push_back(3);    
+	// cout<<v.size()<<endl;
+	// cout<<v.capacity()<<endl;
+
+	// v.pop_back();
+	// v.emplace_back(5);
+
+	// for(int val:v){  //range loop
+	//     cout<<val<<" ";
+	// }
+	// cout<<endl;
+	// cout<<"val at index 1="<<v[0]<<endl;
+	// cout<<"val at front "<<v.front()<<endl;
+	// cout<<"val at back "<<v.back()<<endl;
+
+	// v.insert(v.begin()+1,100);
+
+
+	// v.erase(v.begin()+2);
+	// for(int val:v){
+	//     cout<<val<<" ";
+	// }
+	// v.clear(); //capacity same,size changed
+
+	//     cout<<"empty? "<<v.empty();
+
+
+	//     vector<int>::iterator it;
+	//     for(it=v.begin();it!=v.end();++it){
+	//         cout<<*it<<endl;
+	//     }
+
+
+
+	// List :same like vector but we can add and remove from front as well as back but we can not access data randomly
+	// list<int>l;
+	// l.push_back(1);
+	// l.push_front(2);
+	// l.push_back(20);
+	// l.pop_back();   
+	// l.pop_front();
+
+	//  cout << "Size: " << l.size() << endl;
+	// for(int v:l){
+	//     cout<<v<<" ";
+	// }
+
+	// cout<<l.empty();
+
+	// map
+	// A map is an associative container that stores elements as unique keys with mapped values, sorted by key.
+
+	//  map<int, string> m;
+	//  m[1]="Apple";
+	//  m[2]="Mango";
+	//  m[3]="Banana";
+
+	//  cout << "Size: " << m.size() << endl;
+	//  cout << "Value for key 2: " << m[2] << endl;
+	//  cout << "Value for key 3: " << m[3] << endl;
+
+	//  m.erase(1);
+	//  cout << "Value for key 1: " << m[1] << endl;
+
+
+	// set
+	// A set is an associative container that stores unique elements in sorted order.
+
+	// set<int>s;
+	//  s.insert(10);
+	// s.insert(5);
+	// s.insert(10); // duplicate ignored
+	//  cout << "Size: " << s.size() << endl;
+
+	//  s.erase(5);
+	//  cout << "After erase: ";
+	// for(int x : s)
+	//     cout << x << " ";
+
+	// s.find(10);
+
+
+	// cout<<s.empty();
+	//Queue->A queue is a container adapter that follows the FIFO (First In First Out) principle.
+//     queue<int>q;
+//     q.push(1);
+//     q.push(2);
+//     q.push(3);
+
+//    cout<<"front: "<<q.front()<<endl;
+//    cout<<"front: "<<q.back()<<endl;
+//    cout << "Size: " << q.size() << endl;
+
+//    q.pop();
+
+//    cout<<"front: "<<q.front()<<endl;
+//    cout<<"empty: "<<q.empty()<<endl;
+
+   //deque
+//    A deque (double-ended queue) is a sequence container that allows insertion and deletion at both the front and the back.
+
+	// deque<int>d;
+	// d.push_back(10);
+	// d.push_front(5);
+	// d.push_back(20);
+
+	// cout << "Front: " << d.front() << endl;
+	// cout << "Back: " << d.back() << endl;
+	// cout << "Size: " << d.size() << endl;
+	// cout << "Element at index 1: " << d[1] << endl;
+
+	// d.pop_front();
+	// d.pop_back();
+
+	// cout<<"empty "<<d.empty();
+	// cout<<"size "<<d.size();
+
+	// d.clear();
+	// cout<<"size "<<d.size();
+
+	//stack 
+	// A stack is a container adapter that follows the LIFO (Last In, First Out) principle, where insertion and deletion happen only at the top.
+
+	// stack<int>s;
+	// s.push(10);
+	// s.push(20);
+	// s.push(50);
+
+	// cout << "Top: " << s.top() << endl;
+	// cout << "Size: " << s.size() << endl;
+	//  s.pop();
+
+	// cout << "After pop, Top: " << s.top() << endl;
+
+	// s.empty();
+	// cout<<s.empty();
 }
 
 //int add(int a, int b) {
